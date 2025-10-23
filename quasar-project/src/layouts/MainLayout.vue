@@ -30,10 +30,22 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
+    title: 'Knjižnica - početna',
+    caption: 'Knjižnica - početna stranica',
+    icon: 'favorite',
+    link: '#/',
+  },
+  {
+    title: 'Nove Knjige',
+    caption: 'Nove knjige u knjižnici',
+    icon: 'book',
+    link: '#/noveknjige',
+  },
+  {
+    title: 'Popis knjiga',
+    caption: 'Popis knjiga u knjižnici',
+    icon: 'menu',
+    link: '#/popisknjiga',
   },
   {
     title: 'Github',

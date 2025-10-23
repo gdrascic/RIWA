@@ -1,0 +1,1 @@
+import{Q as e}from"./QPage-7FwCdkfX.js";import{G as r,I as a}from"./index-BzBXDqwZ.js";import"./render-DAzGZUtt.js";const m={__name:"UsersPage",setup(o){return(t,s)=>(a(),r(e,{padding:""}))}};export{m as default};
