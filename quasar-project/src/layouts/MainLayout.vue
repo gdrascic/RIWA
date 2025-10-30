@@ -1,36 +1,20 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-
+  <q-layout view="hHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat dense round icon="menu" @click="leftDrawerOpen = !leftDrawerOpen" />
-        <q-toolbar-title>Knjižnica</q-toolbar-title>
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+
+        <q-toolbar-title class="text-black"> Quasar Aplikacija Knjižnica </q-toolbar-title>
+
+        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item clickable to="/">
-          <q-item-section>Naslovnica</q-item-section>
-        </q-item>
-        <q-item clickable to="/noveknjige">
-          <q-item-section>Nove knjige</q-item-section>
-        </q-item>
-        <q-item clickable to="/popisknjiga">
-          <q-item-section>Popis svih knjiga</q-item-section>
-        </q-item>
-        <q-item clickable to="/pretrazivanje">
-          <q-item-section>Pretraživanje</q-item-section>
-        </q-item>
-        <q-item clickable to="/lokacija">
-          <q-item-section>Lokacija</q-item-section>
-        </q-item>
-        <q-item clickable to="/login">
-          <q-item-section>Login</q-item-section>
-        </q-item>
-        <q-item clickable to="/registracija">
-          <q-item-section>Registracija</q-item-section>
-        </q-item>
+        <q-item-label header> Essential Links </q-item-label>
+
+        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
@@ -42,5 +26,68 @@
 
 <script setup>
 import { ref } from 'vue'
+import EssentialLink from 'components/EssentialLink.vue'
+
+const linksList = [
+  {
+    title: 'Knjižnica-početna',
+    caption: 'Knjižnica - početna stranica',
+    icon: 'home',
+    link: '#/',
+  },
+  {
+    title: 'Nove knjige',
+    caption: 'Nove knjige u knjižnici',
+    icon: 'book',
+    link: '#/NoveKnjige',
+  },
+  {
+    title: 'Popis knjiga',
+    caption: 'Popis knjiga u knjižnici',
+    icon: 'list',
+    link: '#/PopisKnjiga',
+  },
+  {
+    title: 'Pretraživanje',
+    caption: 'Pretraživanje knjižnice',
+    icon: 'search',
+    link: '#/Pretrazivanje',
+  },
+  {
+    title: 'Lokacija',
+    caption: 'Lokacija knjižnice',
+    icon: 'directions',
+    link: '#/Lokacija',
+  },
+  {
+    title: 'Login',
+    caption: 'Login u knjižnicu',
+    icon: 'login',
+    link: '#/Login',
+  },
+  {
+    title: 'Registracija',
+    caption: 'Registracija u knjižnicu',
+    icon: 'face',
+    link: '#/Registracija',
+  },
+  {
+    title: 'Github',
+    caption: 'Moj Gituhb repozetorij',
+    icon: 'code',
+    link: 'https://github.com/barich0/RIWA.git',
+  },
+  {
+    title: 'Veleri',
+    caption: 'Veleučilište u Rijeci',
+    icon: 'home',
+    link: 'https://www.veleri.hr/hr',
+  },
+]
+
 const leftDrawerOpen = ref(false)
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value
+}
 </script>
