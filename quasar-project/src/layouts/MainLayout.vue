@@ -75,7 +75,7 @@ const linksList = [
     title: 'Github',
     caption: 'Moj Gituhb repozetorij',
     icon: 'code',
-    link: 'https://github.com/barich0/RIWA.git',
+    link: 'https://github.com/gdrascic/RIWA.git',
   },
   {
     title: 'Veleri',
